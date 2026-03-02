@@ -30,7 +30,7 @@ Here are the operations and their expected results:
 
 ## Run It Online (No Setup Required)
 
-[![Run on Replit](https://replit.com/badge/github/JioPerey/mobile-phone-simulation-system-java)](https://replit.com/github/JioPerey/mobile-phone-simulation-system-java)
+[![Run on Replit](https://replit.com/badge/github/JioPerey/mobile-phone-simulation-system-java)](https://replit.com/@jiolawrencepere/mobile-phone-simulation-system-java-1)
 
 ---
 

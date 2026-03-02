@@ -1,4 +1,4 @@
-### Mobile Phone Simulation System
+# Mobile Phone Simulation System
 
 A console-based Java application that simulates a basic smartphone system, including SIM card management, contact handling, load balance, messaging, and calling features.
 Built to demonstrate my understanding about Object-Oriented Programming concepts such as Encapsulation, Inheritance, Aggregation, handling edge cases, error handling, etc.
@@ -57,7 +57,7 @@ All class fields are declared as **`private`**, and access is strictly controlle
 git clone https://github.com/JioPerey/mobile-phone-simulation-system-java.git
 
 # 2. Navigate to the project folder
-cd YOUR_REPO
+cd mobile-phone-simulation-system-java
 
 # 3. Compile all Java files
 javac *.java

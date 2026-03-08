@@ -31,71 +31,61 @@ public class Main {
 		Contact contact2 = new Contact("Maria Clara", "09987654321");
 		Contact contact3 = null;
 		
-		// Check if the particular phone has SIM
-		if (!iosPhone1.hasSim()) {
-			System.out.println("No SIM detected.");
-			System.out.println("Insert SIM to peform following operations: ");
-			System.out.println("1. Save contact/s.");
-			System.out.println("2. Send message/s.");
-			System.out.println("3. Make call/s.");
-			return;
-		} 
-		
 		System.out.println("Trying to add invalid contact: ");
-		iosPhone1.getSim().addContact(contact3); // contact3 == null
+		iosPhone1.addContact(contact3); // contact3 == null
 		
 		System.out.println("\nAdding valid contacts: ");
-		// Adding new contact through the phone's SIM
-		iosPhone1.getSim().addContact(contact1);
-		iosPhone1.getSim().addContact(contact2);
+		// Adding new contact
+		iosPhone1.addContact(contact1);
+		iosPhone1.addContact(contact2);
 		
 		
 		System.out.println("\n===== Test Case 4 =====");
 		System.out.println("Trying to top up invalid amount:");
-		iosPhone1.getSim().topUpLoad(0);
+		iosPhone1.topUpLoad(0);
 		
 		System.out.println("\nTopping up valid amount: ");
-		iosPhone1.getSim().topUpLoad(20.0);
+		iosPhone1.topUpLoad(20.0);
 		
 		
 		System.out.println("\n===== Test Case 5 =====");
-		// Calling the printContacts method through the Phone's SIM
-		iosPhone1.getSim().printContacts();
+		// Calling the printContacts method
+		iosPhone1.printContacts();
 		
 		
 		System.out.println("\n===== Test Case 6 =====");
-		// Calling the sendMessage() method through the Phone's SIM
+		// Calling the sendMessage() method
 		System.out.println("Trying to send invalid number of message/s:");
-		iosPhone1.getSim().sendMessage(0); // sending 0 message (doesn't make sense)
+		iosPhone1.sendMessage(0); // sending 0 message (doesn't make sense)
 		
 		System.out.println("\nSending valid number of message/s:");
-		iosPhone1.getSim().sendMessage(1);
+		iosPhone1.sendMessage(1);
 		
-		// Calling the makeCall() method through the Phone's SIM
+		// Calling the makeCall() method
 		System.out.println("\nTrying to make a call with invalid number of minutes: ");
-		iosPhone1.getSim().makeCall(-1); // making a -1 minute call (doesn't make sense)
+		iosPhone1.makeCall(-1); // making a -1 minute call (doesn't make sense)
 		
 		System.out.println("\nMaking a valid call: ");
-		iosPhone1.getSim().makeCall(4);
+		iosPhone1.makeCall(4);
 		
 		System.out.println("\nSend messages to deplete the load balance:");
-		iosPhone1.getSim().sendMessage(7);
+		iosPhone1.sendMessage(7);
 		
 		System.out.println("\nTrying to send message & make call with a 0 load balance:");
-		iosPhone1.getSim().sendMessage(1);
+		iosPhone1.sendMessage(1);
 		System.out.println();
-		iosPhone1.getSim().makeCall(1);
+		iosPhone1.makeCall(1);
 		
 		
 		System.out.println("\n===== Test Case 7 =====");
-		// Calling the removeContact() method through the Phone's SIM
+		// Calling the removeContact() method
 		System.out.println("Removing non-existing contact: ");
 		String contactToRemove1 = "Jio Perey";
-		iosPhone1.getSim().removeContact(contactToRemove1);
+		iosPhone1.removeContact(contactToRemove1);
 		
 		System.out.println("\nRemoving existing contact: ");
 		String contactToRemove2 = "Maria Clara";
-		iosPhone1.getSim().removeContact(contactToRemove2);
+		iosPhone1.removeContact(contactToRemove2);
 		
 		System.out.println("\n===== Test Case 8 =====");
 		iosPhone1.removeSim();

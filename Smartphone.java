@@ -25,6 +25,9 @@ public class Smartphone {
 		this.brand = brand;
 	}
 	
+	public boolean hasSim() {
+		return this.sim != null;
+	}
 	
 	// Method for inserting a sim card to a phone
 	public void insertSim(Sim simToInsert) {
@@ -61,9 +64,88 @@ public class Smartphone {
 		
 	}
 	
-	public boolean hasSim() {
-		return this.sim != null;
+	// Wrapper method for adding contact, so we can call addContact through
+	// Smartphone Class (and its child classes)
+	public void addContact(Contact contactToAdd) {
+		
+		if (!hasSim()) {
+			System.out.println("No SIM. Insert a SIM to add contact.");
+			return;
+		}
+		
+		getSim().addContact(contactToAdd);
+	}
+	
+	// Wrapper method for topping up load, so we can call topUpLoad through
+	// Smartphone Class (and its child classes)
+	public void topUpLoad(double topUpAmount) {
+		
+		if (!hasSim()) {
+			System.out.println("No SIM. Insert a SIM to top up load.");
+			return;
+		}
+		
+		getSim().topUpLoad(topUpAmount);
+	}
+	
+	// Wrapper method for printing contacts, so we can call printContacts through
+	// Smartphone Class (and its child classes)
+	public void printContacts() {
+		
+		if (!hasSim()) {
+			System.out.println("No SIM. Insert a SIM to see your phonebook.");
+			return;
+		}
+		
+		getSim().printContacts();
+	}
+	
+	// Wrapper method for sending message/s, so we can call sendMessage through
+	// Smartphone Class (and its child classes)
+	public void sendMessage(int noOfMessages) {
+		
+		if (!hasSim()) {
+			System.out.println("No SIM. Insert a SIM to send message/s");
+			return;
+		}
+		
+		getSim().sendMessage(noOfMessages);
 	}
 	
 	
+	// Wrapper method for making a call, so we can call makeCall through
+	// Smartphone Class (and its child classes)
+	public void makeCall(int durationInMinutes) {
+		
+		if (!hasSim()) {
+			System.out.println("No SIM. Insert a SIM to make a call.");
+			return;
+		}
+		
+		getSim().makeCall(durationInMinutes);
+	}
+	
+	// Wrapper method for making a call, so we can call makeCall through
+	// Smartphone Class (and its child classes)
+	public void removeContact(String contactToRemove) {
+		
+		if (!hasSim()) {
+			System.out.println("No SIM. Insert a SIM to remove contact/s");
+			return;
+		}
+		
+		getSim().removeContact(contactToRemove);
+	}
+		
 }
+
+
+
+
+
+
+
+
+
+
+
